@@ -13,7 +13,21 @@ public class VectraApp extends Application {
         Label title = new Label("Vectra");
         Label subtitle = new Label("Cotações, gráficos e ações favoritas em um só lugar.");
 
-        VBox layout = new VBox(10, title, subtitle);
+        Label symbol = new Label("PETR4");
+        Label company = new Label("Petrobras PN");
+        Label price = new Label("R$ 38,42");
+        Label change = new Label("+1,24% hoje");
+
+        VBox quoteCard = new VBox(8, symbol, company, price, change);
+        quoteCard.setPadding(new Insets(16));
+        quoteCard.setStyle(
+                "-fx-background-color: white; " +
+                        "-fx-border-color: #cbd5e1; " +
+                        "-fx-border-radius: 8; " +
+                        "-fx-background-radius: 8;"
+        );
+
+        VBox layout = new VBox(18, title, subtitle, quoteCard);
         layout.setPadding(new Insets(24));
 
         Scene scene = new Scene(layout, 800, 500);
